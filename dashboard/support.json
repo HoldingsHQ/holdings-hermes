@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "articles": [
+    {
+      "id": "start",
+      "title": "How do I get started?",
+      "keywords": "setup start connect add account first demo sample",
+      "destination": "Sources",
+      "answer": "Open Portfolio and follow Set up Holdings. Add a public wallet in Wallets, or add read-only exchange keys in Hermes plugin settings and load your balances from Sources. You can also choose Just looking? Try the demo. The demo uses fictional data and clears when you leave Holdings."
+    },
+    {
+      "id": "keys",
+      "title": "Where do I add my API keys?",
+      "keywords": "setup credentials key secret password binance bybit kraken api missing-key",
+      "destination": "Sources",
+      "answer": "In Hermes, open Capabilities, then Plugins, then Holdings and its settings. Save the keys in the same profile you use for Holdings. \n\nKraken calls them API Key and Private Key, while Binance and Bybit call them API key and secret. Use view-only keys with trading and withdrawals turned off, and never paste a key into chat. \n\nIn Holdings, Settings then Keys and storage has a Get more from Holdings card that walks through the Zerion, Etherscan and exchange keys. A successful balance read can warn about extra permissions, so review those permissions at the exchange. Holdings never trades, signs or sends transactions."
+    },
+    {
+      "id": "read-only",
+      "title": "Can Holdings trade or move my money?",
+      "keywords": "trade trading send execute swap buy sell write signing permission withdraw move money",
+      "destination": "Sources",
+      "answer": "Holdings cannot trade or move your money. It reads records and helps you review them. It never places orders, signs transactions or moves money. Use view-only exchange keys with trading and withdrawals turned off. Confirming a possible transfer only links two existing records, and it does not send another transfer. Revoke links open an external service for you to review separately."
+    },
+    {
+      "id": "wallets",
+      "title": "Which wallets and networks can I add?",
+      "keywords": "wallet address chain network ethereum base arbitrum bnb robinhood solana",
+      "destination": "Wallets & DeFi",
+      "answer": "Open Wallets, enter a public address and tick the networks it uses. Choose Add another wallet for up to five addresses, and Holdings reads up to 12 address and network pairs at once. You can view them together or separately. Ethereum, Base, Arbitrum, BNB Chain, Robinhood Chain and Solana have balance readers. \n\nWithout any keys, Holdings reads the main coin and a short list of well-known tokens on Ethereum and similar networks from public servers, and it prices them with DefiLlama. On Solana it reads SOL and every token held in the wallet. With a Zerion API key, Holdings can list every token in an Ethereum-compatible wallet, plus DeFi positions and NFTs. Never enter a seed phrase or wallet private key."
+    },
+    {
+      "id": "zerion",
+      "title": "How do DeFi positions, NFTs and P&L work?",
+      "keywords": "zerion defi nft image thumbnail floor pnl profit loss protocol lending liquidity staking",
+      "destination": "DeFi",
+      "answer": "Add an optional Zerion API key in the Holdings plugin settings in Hermes, load a supported public wallet, then load tokens, DeFi positions or NFTs. When Zerion tokens load, the Portfolio total uses Zerion's token list and verified prices in place of the short public list, so nothing is counted twice. DeFi positions and NFTs are shown but are not added to the total. A floor estimate is a collection estimate rather than a guaranteed sale price. Zerion profit and loss is a provider estimate, not tax cost basis. Unsupported networks, rate limits and missing data are shown instead of zero balances."
+    },
+    {
+      "id": "coverage",
+      "title": "Why is a balance or part of my history missing?",
+      "keywords": "missing empty zero history coverage pagination failed partial incomplete balance unavailable",
+      "destination": "Sources",
+      "answer": "Open Sources and inspect the coverage for that source. Holdings shows the dates or blocks requested, the results received and any failed pages. No activity, incomplete history and an unavailable connection mean different things. Missing records do not mean your balance is zero or that you lost money. Transaction history is not used to invent a current balance. Bybit live API-to-file matching and real cross-account transfer matching are still unverified. Do not treat the demo as proof of those integrations."
+    },
+    {
+      "id": "transfers",
+      "title": "What does Possible transfer mean?",
+      "keywords": "possible transfer confirm reject undo fee match sent received money moved",
+      "destination": "Activity",
+      "answer": "Holdings found two records that might describe money moving between your accounts. Open the item to compare what was sent, what arrived, the fee and both sources. Confirm the match only if both accounts belong to you. Choose Not the same to reject it, or Decide later to leave it open. Undo reverses your decision. The original records stay intact. Amounts and times alone are not proof of a match. Linking a transfer does not create extra income or a purchase."
+    },
+    {
+      "id": "conflicts",
+      "title": "What should I do when two sources disagree?",
+      "keywords": "conflict disagreement duplicate import csv file reconciliation prefer exclude",
+      "destination": "Activity",
+      "answer": "Open the conflicting item in Activity to compare the original records. You can mark a preferred source or confirm that the disputed records should stay excluded. Neither version is included in transaction or fee totals, even after you mark a preferred source.\n\nThe original records stay available, and you can undo your decision. Importing the same supported records again should not add them twice. Each exchange has its own supported file formats."
+    },
+    {
+      "id": "holdings-key",
+      "title": "How do I set up the Holdings key for Alert watch?",
+      "keywords": "holdings key vault key alert watch setup keychain mac secret-tool linux 1password command helper secrets locked restart gateway",
+      "destination": "Alerts",
+      "answer": "Alert watch keeps your alert rules and history on this computer in an encrypted file. Hermes gives Holdings the key at startup from a secure store you control, and Holdings never reads your Keychain itself. This setup is optional and takes about two minutes in Terminal.\n\nOn a Mac, paste the first block into Terminal to make a random key and save it in your login Keychain. It prints nothing unless a key is already there, and it never replaces an existing key. Then paste the second block so Hermes reads the key at startup. If you use a named Hermes profile, add --profile and its name after each hermes word. If you start Hermes with HERMES_HOME set, set it the same way in Terminal first. If you already use a Hermes command helper for other secrets, add the Holdings line to that helper instead of replacing it.\n\nThen restart the Hermes gateway with the restart block. Quitting Hermes Desktop is not enough, because the gateway keeps running in the background. Run the check below. It should say PASSED. The check starts its own Hermes process, so the Alerts page is the final test. Open Holdings → Alerts and turn on Alert watch. If it still says locked, choose Check again.\n\nThe first time Hermes reads the key, macOS may ask whether security can use it. Choose Always Allow, because Hermes gives the helper 3 seconds and cannot answer a prompt. The login Keychain must be unlocked, so start Hermes after you log in.\n\nOn Linux, use the secret-tool blocks instead. If you use 1Password, the last block keeps the key there. Keep the key safe, because Holdings cannot open saved alerts or reviews without it.",
+      "commands": [
+        {
+          "label": "Mac step 1. Make the key in your login Keychain",
+          "code": "security find-generic-password -s hermes-holdings-vault-key >/dev/null 2>&1 \\\n  && echo \"A Holdings key is already in your Keychain, so Holdings kept it.\" \\\n  || printf 'add-generic-password -a %s -s hermes-holdings-vault-key -w %s\\n' \"$USER\" \"$(openssl rand -base64 32)\" | security -i >/dev/null"
+        },
+        {
+          "label": "Mac step 2. Let Hermes read it at startup",
+          "code": "hermes config set secrets.command.command 'k=$(security find-generic-password -s hermes-holdings-vault-key -w) && printf \"HOLDINGS_VAULT_KEY=%s\\n\" \"$k\"'\nhermes config set secrets.command.override_existing true\nhermes config set secrets.command.helper_timeout_seconds 3\nhermes config set secrets.command.enabled true"
+        },
+        {
+          "label": "Restart the gateway so it reads the key",
+          "code": "hermes gateway restart --detach"
+        },
+        {
+          "label": "Check that Hermes can read the key",
+          "code": "hermes holdings-storage check"
+        },
+        {
+          "label": "Linux step 1. Make the key in your keyring",
+          "code": "secret-tool lookup service hermes-holdings-vault-key >/dev/null 2>&1 \\\n  && echo \"A Holdings key is already in your keyring, so Holdings kept it.\" \\\n  || openssl rand -base64 32 | tr -d '\\n' | secret-tool store --label=\"Hermes Holdings key\" service hermes-holdings-vault-key"
+        },
+        {
+          "label": "Linux step 2. Let Hermes read it at startup",
+          "code": "hermes config set secrets.command.command 'k=$(secret-tool lookup service hermes-holdings-vault-key) && printf \"HOLDINGS_VAULT_KEY=%s\\n\" \"$k\"'\nhermes config set secrets.command.override_existing true\nhermes config set secrets.command.helper_timeout_seconds 3\nhermes config set secrets.command.enabled true"
+        },
+        {
+          "label": "Or keep the key in 1Password",
+          "code": "hermes secrets onepassword setup\nop item get \"Hermes Holdings key\" --vault Private >/dev/null 2>&1 \\\n  || printf '{\"title\":\"Hermes Holdings key\",\"category\":\"PASSWORD\",\"fields\":[{\"id\":\"password\",\"type\":\"CONCEALED\",\"purpose\":\"PASSWORD\",\"label\":\"password\",\"value\":\"%s\"}]}' \"$(openssl rand -base64 32)\" | op item create --vault Private - >/dev/null\nhermes secrets onepassword set HOLDINGS_VAULT_KEY \"op://Private/Hermes Holdings key/password\""
+        }
+      ]
+    },
+    {
+      "id": "storage",
+      "title": "Why can't I open saved reviews?",
+      "keywords": "protected storage plugin-host in-process locked unavailable vault saved restart key-source",
+      "destination": "Settings",
+      "answer": "Saved reviews require protected storage in the same Hermes profile. If Holdings says protected reviews are unavailable in plugin-host mode, use a profile running Hermes's in-process plugin mode. In plugin-host mode, the demo can still run, but its review decisions last only for the session. If the key is missing or locked, follow the Holdings key setup guide or restore the profile's supported secret source, then try again. Do not delete encrypted files, replace a key blindly or turn off authentication. Holdings cannot recover encrypted records without the correct key."
+    },
+    {
+      "id": "chat",
+      "title": "What can Ask Holdings see, and what goes to the model?",
+      "keywords": "chat model provider private privacy share opt-in context conversation qwen openrouter help",
+      "destination": "Settings",
+      "answer": "The chat shows the selection it is answering about. Record-based answers calculate from the available records on this device. Demo chat uses the bundled fictional records on this device. Explicit sample commands in ordinary Hermes chat can use the configured model. \n\nPrivate companion-tool output requires the separate per-profile opt-in, which is off by default. \n\nSupport questions send your question, relevant help articles and up to two previous support questions. They do not attach your holdings, keys, logs or account configuration. Do not put secrets or private records in a support question. The assistant cannot inspect your exchange account or diagnose an unseen error."
+    },
+    {
+      "id": "model-errors",
+      "title": "Why did chat fail or stop answering?",
+      "keywords": "chat model error failed provider grounding ungrounded busy cancel timeout answer retry connection",
+      "destination": "Settings",
+      "answer": "Check which model is selected in Hermes and whether its provider is configured. If a request fails, try again. If an answer cannot be tied to the supplied evidence, Holdings may show a record-based answer instead, or ask you to rephrase. \n\nCancel prevents a late answer from appearing, but it does not prove the provider stopped processing the request. A scope or model change must not put an old answer under a new selection. \n\nA fresh Hermes slash-command draft can show Submission destination changed. If it does, retry in the same session after Hermes creates it."
+    },
+    {
+      "id": "prices",
+      "title": "Are the ticker and charts live?",
+      "keywords": "ticker price chart market quote stale updating play pause markets refresh sol bnb btc weth polling",
+      "destination": "Charts",
+      "answer": "The Markets strip refreshes about once a minute while the view is visible, and it starts still. Press the play button to scroll it and press it again to pause. Green and red arrows show the change since the last 24-hour close. BTC/USD, SOL/USD and BNB/USD use Kraken Spot, and WETH/USD uses a specific Ethereum Uniswap pool through GeckoTerminal. Open a quote to see its market, source and update time. While a refresh is running, a quote can show Updating. A market chart shows that asset's price, not the return on your portfolio."
+    },
+    {
+      "id": "total",
+      "title": "What does the Portfolio total count?",
+      "keywords": "total value portfolio sum counted twice double binance kraken bybit exchange zerion price not priced",
+      "destination": "Overview",
+      "answer": "The Portfolio total adds your wallets and your exchange balances, and it shows each part beside the total. For a wallet where Zerion tokens are loaded, Holdings uses Zerion's token list and verified prices in place of the short public list, so each token is counted once. If Zerion cannot load, the total uses the public list instead. \n\nExchange balances are priced with each exchange's own public ticker, and USD stablecoins such as USDC and USDT are counted at $1. A token without a recent price shows No price yet and is left out of the total. DeFi positions and NFTs are listed separately and are not added."
+    },
+    {
+      "id": "performance",
+      "title": "Why doesn't my portfolio chart show my full history?",
+      "keywords": "performance return chart snapshots valuation historical cost basis gain loss",
+      "destination": "Overview",
+      "answer": "The local value chart starts with saved refreshes, and it cannot rebuild balances from missing history. Zerion charts show the provider's wallet value history and are labelled separately. A price move alone does not explain your portfolio return, because deposits, withdrawals, fees and other changes matter too. Return percentages are only shown where the required value and cash-flow records exist. Imported cost basis and Zerion estimates are kept separate, and there is no cross-exchange cost-basis matching."
+    },
+    {
+      "id": "exports",
+      "title": "What is in the accountant packet?",
+      "keywords": "accountant export download packet csv manifest summary year cost basis",
+      "destination": "Exports",
+      "answer": "Open Exports, review the included sources and dates, then save the accountant packet to a local folder. It includes the records CSV, a coverage file describing sources and gaps, and a summary. Review decisions and open questions stay visible. Where available, you can include loaded balance snapshots, imported lots and clearly labelled provider estimates. These files are not encrypted, so choose a private folder. Nothing is emailed or uploaded by the export action. The packet is not a tax return and does not promise complete history. If only some files save, Holdings names what succeeded. Choose a new folder before you try again."
+    },
+    {
+      "id": "alerts",
+      "title": "What do security checks and alerts mean?",
+      "keywords": "security scam airdrop approval hack revoke alert notification cron weekly schedule watch",
+      "destination": "Security",
+      "answer": "Open a security finding to see what the source reported and what the check covered. An unlimited approval lets a spender access up to the displayed allowance. A revoke.cash link opens an external service where you review any wallet action yourself. Desktop alerts appear inside Hermes. Turn on Alert watch to check periodically while the app is open. If you set up the local scheduled job, its results appear in Hermes job history while the scheduler runs. Review any partial or unavailable checks before relying on a quiet result."
+    },
+    {
+      "id": "connection-errors",
+      "title": "What should I do when a connection fails?",
+      "keywords": "connection api error rate limit invalid missing key unavailable busy offline timeout failed 429",
+      "destination": "Sources",
+      "answer": "For a missing-key message, add the requested key in this profile's Holdings plugin settings in Hermes. If a key is rejected, check the key and its read-only permissions at the provider. For a rate limit, wait before refreshing again. For an unavailable or timed-out service, retry later and check the last update time before relying on cached results. For a partial scan, review the failed pages rather than assuming the missing period had no activity. Do not change network or security settings just to clear an error."
+    },
+    {
+      "id": "background-watch",
+      "title": "How do I keep watch while using Hermes?",
+      "keywords": "background monitor alerts watch every 5 minutes rules notifications",
+      "destination": "Alerts",
+      "answer": "Set up your Holdings key with the Holdings key setup guide in Support, then open Alerts. Choose the public wallets you want to watch and enable Alert watch. Hermes checks about every 5 minutes while it is open. Outflows are checked every 5 minutes and the other checks every 15 minutes. DeFi positions from Zerion refresh every 3 hours. You can use other Hermes views and open new findings from the Holdings status-bar alert count. General news is not included in that count.\n\nClosing Hermes stops Desktop checks. A separately configured local scheduled job can leave results in Hermes job history. OS notifications and external alert delivery are not part of this release."
+    }
+  ]
+}

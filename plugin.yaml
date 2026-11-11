@@ -1,0 +1,77 @@
+name: holdings
+version: "0.1.9"
+manifest_version: 2
+requires_hermes: ">=0.22.7"
+description: "A chat-first, source-linked exchange and wallet activity workspace for Hermes."
+author: HoldingsHQ
+license: MIT
+provides_tools:
+  - holdings_help
+  - holdings_sample_lookup
+  - holdings_summary
+  - holdings_exposure
+  - holdings_recent_movements
+  - holdings_needs_attention
+  - holdings_explain_year
+  - holdings_alert_watch
+  - holdings_weekly_briefing
+config_schema:
+  share_private_chat_tools:
+    type: boolean
+    default: false
+    label: Allow private portfolio data in Holdings chat tools
+    description: "Off by default. When enabled for this Hermes profile, Ask Holdings and Hermes chat can send your saved wallet and exchange records to your active model. Hosted models can receive these records. Turn this off to keep private data on this device, and Ask Holdings keeps answering locally."
+  etherscan_api_key:
+    type: secret
+    env: HOLDINGS_ETHERSCAN_API_KEY
+    required: false
+    label: Etherscan API key
+    description: "Optional for Ethereum balances, and required for the wallet history connector. The fictional workspace needs no key."
+  zerion_api_key:
+    type: secret
+    env: HOLDINGS_ZERION_API_KEY
+    required: false
+    label: Zerion API key
+    description: "Optional read-only token, DeFi and NFT snapshots from Zerion when requested."
+  kraken_api_key:
+    type: secret
+    env: HOLDINGS_KRAKEN_API_KEY
+    required: false
+    label: Kraken API key
+    description: "Use Query Funds for Spot balances. For protected history, also enable Query Closed Orders & Trades and Query Ledger Entries. Leave write permissions off."
+  kraken_api_secret:
+    type: secret
+    env: HOLDINGS_KRAKEN_API_SECRET
+    required: false
+    label: Kraken Private Key
+    description: "Private Key paired with your read-only Kraken API key."
+  binance_api_key:
+    type: secret
+    env: HOLDINGS_BINANCE_API_KEY
+    required: false
+    label: Binance.com API Key
+    description: "Optional system-generated Binance.com key for Spot reads. Use Enable Reading only, with trading and withdrawals off."
+  binance_api_secret:
+    type: secret
+    env: HOLDINGS_BINANCE_API_SECRET
+    required: false
+    label: Binance.com Secret Key
+    description: "Optional matching secret for the read-only Binance.com key."
+  bybit_api_key:
+    type: secret
+    env: HOLDINGS_BYBIT_API_KEY
+    required: false
+    label: Bybit API Key
+    description: "System-generated Read-Only Bybit.com Global key for Unified wallet balances and Spot history. Leave trading writes and withdrawals off."
+  bybit_api_secret:
+    type: secret
+    env: HOLDINGS_BYBIT_API_SECRET
+    required: false
+    label: Bybit API Secret
+    description: "Secret paired with your read-only Bybit key."
+  vault_key:
+    type: secret
+    env: HOLDINGS_VAULT_KEY
+    required: false
+    label: Holdings vault key (external source)
+    description: "For protected reviews only. Supply a base64-encoded 32-byte key through a supported external Hermes secret source. A value entered directly in plugin settings cannot unlock reviews."

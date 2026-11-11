@@ -1,0 +1,15 @@
+.env
+.env.*
+*.pem
+*.key
+credentials*
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+dist/
+*.zip
+*.log
+*.sqlite*
+exports/
+private-data/

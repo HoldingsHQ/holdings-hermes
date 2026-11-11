@@ -1,0 +1,420 @@
+{
+  "mode": "fictional",
+  "portfolio": {
+    "at": "2026-11-08T17:20:00Z",
+    "positions": [
+      {
+        "name": "Wallet tokens",
+        "supplied": 100250,
+        "assets": [
+          [
+            "Ether",
+            "16.00 ETH",
+            51200
+          ],
+          [
+            "Wrapped bitcoin",
+            "0.50 WBTC",
+            34000
+          ],
+          [
+            "USD Coin",
+            "12,650 USDC",
+            12650
+          ],
+          [
+            "Other wallet tokens",
+            "",
+            2400
+          ]
+        ]
+      },
+      {
+        "name": "Aave v3 on Ethereum",
+        "supplied": 35600,
+        "debt": 12000,
+        "health": "1.86"
+      },
+      {
+        "name": "Uniswap v3 on Base",
+        "supplied": 8400
+      },
+      {
+        "name": "Kraken",
+        "supplied": 32000
+      }
+    ],
+    "allocation": [
+      [
+        "ETH",
+        76800
+      ],
+      [
+        "WBTC",
+        34000
+      ],
+      [
+        "USDC",
+        22650
+      ],
+      [
+        "Other / unclassified",
+        42800
+      ]
+    ]
+  },
+  "rows": [
+    {
+      "id": "eip155:1:0x3333333333333333333333333333333333333333333333333333333333333333:0x2:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "at": "2026-01-01T00:00:00+00:00",
+      "kind": "defi_swap",
+      "asset": "eip155:1/erc20:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "quantity": "-1.000000",
+      "cost": "0",
+      "fee": "0",
+      "fee_asset": "",
+      "evidence": [
+        "eip155:1:0x3333333333333333333333333333333333333333333333333333333333333333:0x0:transfer",
+        "eip155:1:0x3333333333333333333333333333333333333333333333333333333333333333:0x2:swap",
+        "factory:0x1f98431c8ad98523631ae4a59f267346ea31f984:0x10:0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+      ],
+      "observations": [
+        {
+          "pool_delta": "1000000",
+          "pool": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+        }
+      ]
+    },
+    {
+      "id": "eip155:1:0x3333333333333333333333333333333333333333333333333333333333333333:0x2:0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "at": "2026-01-01T00:00:00+00:00",
+      "kind": "defi_swap",
+      "asset": "eip155:1/erc20:0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "quantity": "0.010000000000000000",
+      "cost": "0",
+      "fee": "0",
+      "fee_asset": "",
+      "evidence": [
+        "eip155:1:0x3333333333333333333333333333333333333333333333333333333333333333:0x1:transfer",
+        "eip155:1:0x3333333333333333333333333333333333333333333333333333333333333333:0x2:swap",
+        "factory:0x1f98431c8ad98523631ae4a59f267346ea31f984:0x10:0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+      ],
+      "observations": [
+        {
+          "pool_delta": "-10000000000000000",
+          "pool": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+        }
+      ]
+    },
+    {
+      "id": "kraken:sample:ledger:L-SAMPLE",
+      "at": "2026-01-01T00:00:00+00:00",
+      "kind": "trade_movement",
+      "asset": "kraken-asset:XXBT",
+      "quantity": "0.02",
+      "cost": "0",
+      "fee": "0.0002",
+      "fee_asset": "kraken-asset:XXBT",
+      "evidence": [
+        "csv:kraken:sample:ledger:L-SAMPLE"
+      ],
+      "observations": [
+        {
+          "amount": "0.02",
+          "asset": "XXBT",
+          "balance": "0.0198",
+          "fee": "0.0002",
+          "refid": "T-SAMPLE",
+          "subtype": "",
+          "time": "2026-01-01 00:00:00",
+          "txid": "L-SAMPLE",
+          "type": "trade"
+        }
+      ]
+    },
+    {
+      "id": "kraken:sample:trades:T-SAMPLE",
+      "at": "2026-01-01T00:00:00+00:00",
+      "kind": "buy",
+      "asset": "kraken-pair:BTC/USD",
+      "quantity": "0.02",
+      "cost": "2",
+      "fee": "0",
+      "fee_asset": "",
+      "evidence": [
+        "csv:kraken:sample:trades:T-SAMPLE"
+      ],
+      "observations": [
+        {
+          "cost": "2",
+          "fee": "0.02",
+          "ledgers": "L-SAMPLE",
+          "ordertxid": "O-SAMPLE",
+          "pair": "XBT/USD",
+          "price": "100",
+          "time": "2026-01-01 00:00:00",
+          "txid": "T-SAMPLE",
+          "type": "buy",
+          "vol": "0.02"
+        }
+      ]
+    },
+    {
+      "id": "sample:ethereum:eth-transfer-1",
+      "at": "2026-01-01T08:30:00+00:00",
+      "kind": "transfer",
+      "asset": "eip155:1/slip44:60",
+      "quantity": "-0.1",
+      "cost": "0",
+      "fee": "0",
+      "fee_asset": "",
+      "evidence": [
+        "sample:ethereum:eth-transfer-1:transaction"
+      ],
+      "observations": [
+        {
+          "fixture": "Fictional native transfer"
+        }
+      ]
+    }
+  ],
+  "transfer_demo": [
+    {
+      "id": "fictional-transfer-1",
+      "kind": "withdrawal",
+      "at": "2026-01-01T09:00:00+00:00",
+      "sourceMode": "kraken-spot",
+      "asset": "eip155:1/slip44:60",
+      "quantity": "-0.500",
+      "cost": "0",
+      "fee": "0.010",
+      "fee_asset": "eip155:1/slip44:60",
+      "transfer": {
+        "asset": "eip155:1/slip44:60",
+        "ref": "fictional-transfer-1",
+        "account": "fictional-kraken-spot",
+        "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "feeAsset": "eip155:1/slip44:60"
+      },
+      "evidence": [
+        "sample:fictional-transfer-1"
+      ],
+      "observations": [
+        {
+          "fixture": "Fictional transfer record",
+          "reference": "fictional-transfer-1",
+          "amount": "-0.500",
+          "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    },
+    {
+      "id": "fictional-transfer-2",
+      "kind": "transfer",
+      "at": "2026-01-01T09:08:00+00:00",
+      "sourceMode": "ethereum",
+      "asset": "eip155:1/slip44:60",
+      "quantity": "0.490",
+      "cost": "0",
+      "fee": "0",
+      "fee_asset": "",
+      "transfer": {
+        "asset": "eip155:1/slip44:60",
+        "ref": "fictional-transfer-2",
+        "account": "fictional-ethereum",
+        "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "feeAsset": ""
+      },
+      "evidence": [
+        "sample:fictional-transfer-2"
+      ],
+      "observations": [
+        {
+          "fixture": "Fictional transfer record",
+          "reference": "fictional-transfer-2",
+          "amount": "0.490",
+          "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    },
+    {
+      "id": "fictional-transfer-3",
+      "kind": "withdrawal",
+      "at": "2026-01-01T13:00:00+00:00",
+      "sourceMode": "kraken-spot",
+      "asset": "eip155:1/slip44:60",
+      "quantity": "-0.125",
+      "cost": "0",
+      "fee": "0",
+      "fee_asset": "",
+      "transfer": {
+        "asset": "eip155:1/slip44:60",
+        "ref": "fictional-transfer-3",
+        "account": "fictional-kraken-spot",
+        "hash": "",
+        "feeAsset": ""
+      },
+      "evidence": [
+        "sample:fictional-transfer-3"
+      ],
+      "observations": [
+        {
+          "fixture": "Fictional transfer record",
+          "reference": "fictional-transfer-3",
+          "amount": "-0.125",
+          "hash": ""
+        }
+      ]
+    },
+    {
+      "id": "fictional-transfer-4",
+      "kind": "transfer",
+      "at": "2026-01-01T13:32:00+00:00",
+      "sourceMode": "ethereum",
+      "asset": "eip155:1/slip44:60",
+      "quantity": "0.125",
+      "cost": "0",
+      "fee": "0",
+      "fee_asset": "",
+      "transfer": {
+        "asset": "eip155:1/slip44:60",
+        "ref": "fictional-transfer-4",
+        "account": "fictional-ethereum",
+        "hash": "",
+        "feeAsset": ""
+      },
+      "evidence": [
+        "sample:fictional-transfer-4"
+      ],
+      "observations": [
+        {
+          "fixture": "Fictional transfer record",
+          "reference": "fictional-transfer-4",
+          "amount": "0.125",
+          "hash": ""
+        }
+      ]
+    }
+  ],
+  "conflict_demo": {
+    "kraken:sample:ledger:L-FICTIONAL-CONFLICT": [
+      {
+        "originalId": "kraken:sample:ledger:L-FICTIONAL-CONFLICT",
+        "at": "2026-01-01T00:00:00+00:00",
+        "kind": "trade_movement",
+        "asset": "kraken-asset:XXBT",
+        "quantity": "0.02",
+        "cost": "0",
+        "fee": "0.0002",
+        "fee_asset": "kraken-asset:XXBT",
+        "evidence": [
+          "csv:kraken:sample:ledger:L-FICTIONAL-CONFLICT"
+        ],
+        "original": {
+          "amount": "0.02",
+          "asset": "XXBT",
+          "fee": "0.0002",
+          "refid": "T-FICTIONAL-CONFLICT",
+          "time": "2026-01-01 00:00:00",
+          "txid": "L-FICTIONAL-CONFLICT",
+          "type": "trade"
+        }
+      },
+      {
+        "originalId": "kraken:sample:ledger:L-FICTIONAL-CONFLICT",
+        "at": "2026-01-01T00:00:00.123456+00:00",
+        "kind": "trade_movement",
+        "asset": "kraken-asset:XXBT",
+        "quantity": "0.0199",
+        "cost": "0",
+        "fee": "0.0003",
+        "fee_asset": "kraken-asset:XXBT",
+        "evidence": [
+          "api:kraken:sample:ledger:L-FICTIONAL-CONFLICT"
+        ],
+        "original": {
+          "amount": "0.0199",
+          "asset": "XXBT",
+          "fee": "0.0003",
+          "refid": "T-FICTIONAL-CONFLICT",
+          "time": "1767225600.123456",
+          "txid": "L-FICTIONAL-CONFLICT",
+          "type": "trade"
+        }
+      }
+    ]
+  },
+  "history_demo": {
+    "kraken-spot": {
+      "status": "ready",
+      "start": "2026-01-01",
+      "end": "2026-01-01",
+      "coverage": [
+        {
+          "section": "trades",
+          "pages": 1,
+          "failed_pages": [],
+          "complete": true
+        },
+        {
+          "section": "ledger",
+          "pages": 1,
+          "failed_pages": [],
+          "complete": true
+        }
+      ]
+    },
+    "binance-spot": {
+      "status": "ready",
+      "start": "2026-01-01",
+      "end": "2026-01-01",
+      "symbol": "ETHUSDT",
+      "coverage": [
+        {
+          "section": "spot-fills",
+          "pages": 1,
+          "failed_pages": [],
+          "complete": true
+        }
+      ]
+    },
+    "ethereum": {
+      "status": "ready",
+      "start": 16,
+      "end": 18,
+      "coverage": [
+        {
+          "section": "txlist",
+          "pages": 1,
+          "failed_pages": [
+            2
+          ],
+          "complete": false,
+          "gap": "failed-page"
+        },
+        {
+          "section": "tokentx",
+          "pages": 1,
+          "failed_pages": [],
+          "complete": true
+        }
+      ]
+    },
+    "bybit-spot": {
+      "status": "unavailable"
+    },
+    "bybit-csv": {
+      "status": "empty"
+    }
+  },
+  "sample_import": {
+    "sha256": "fdee8958d5feebd9f1b39e7fb4993591732f66232161f37f1ab32ad3e5d7b406",
+    "bytes": 132
+  },
+  "coverage": [
+    "Kraken sample: one spot fill and one linked ledger movement.",
+    "Ethereum sample: one native transfer and one single-pool swap.",
+    "Fictional coverage only. No real accounts, chain history or cost basis."
+  ],
+  "conflicts": {}
+}

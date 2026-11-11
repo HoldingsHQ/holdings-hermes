@@ -1,0 +1,20 @@
+[
+  {
+    "symbol": "ETHUSDT", "id": 91000001, "orderId": 90000002, "orderListId": -1,
+    "price": "2000.00", "qty": "0.025", "quoteQty": "50.00",
+    "commission": "0.00012345", "commissionAsset": "BNB",
+    "time": 1767225600312, "isBuyer": true, "isMaker": false, "isBestMatch": true
+  },
+  {
+    "symbol": "ETHUSDT", "id": 91000002, "orderId": 90000002, "orderListId": -1,
+    "price": "2000.00", "qty": "0.03000000", "quoteQty": "60",
+    "commission": "0.00012345", "commissionAsset": "BNB",
+    "time": 1767225600472, "isBuyer": true, "isMaker": false, "isBestMatch": true
+  },
+  {
+    "symbol": "ETHUSDT", "id": 91000003, "orderId": 90000004, "orderListId": -1,
+    "price": "2000.00", "qty": "0.010", "quoteQty": "20.00",
+    "commission": "0.0200", "commissionAsset": "USDT",
+    "time": 1767225601931, "isBuyer": false, "isMaker": true, "isBestMatch": true
+  }
+]
